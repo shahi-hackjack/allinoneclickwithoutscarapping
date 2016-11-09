@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="calculator">
+<head>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
+
+
+
+
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/html2canvas.js"></script>
+<script type="text/javascript" src="js/jquery.plugin.html2canvas.js"></script>
+    <meta charset="UTF-8">
+    <title>CALCULT</title>
+
+
+
+    <meta charset="UTF-8">
+    <title>ALL IN ONE CALCULATOR</title>
+
+
+</head>
+<body>
+<div class="container"  >
+    <table class="table" ng-controller="calc">
+        <tbody>
+        <col width="52px" />
+        <col width="45px" />
+        <col width="48px" />
+        <col width="45px" />
+        <col width="30px" />
+        <col width="30px" />
+        <col width="30px" />
+        <col width="30px" />
+        <col width="30px" />
+        <col width="30px" />
+        <col width="30px" />
+        <col width="30px" />
+        <col width="30px" />
+        <col width="30px" />
+
+
+        <tr>
+
+            <td>STOCK</td>
+            <td>{{s.name}}</td>
+            <td id="level"></td>
+            <td id="level">LEVELS</td>
+            <td id="level"> 50.00%</td>
+            <td id="level"> 61.80%</td>
+            <td id="level">76%</td>
+            <td id="hundred">100%</td>
+            <td id="level">24%</td>
+            <td id="level">38%</td>
+            <td id="level">61.80%</td>
+            <td id="level">100%</td>
+            <td id="level">138.20%</td>
+            <td id="level">161.80%</td>
+        </tr>
+
+
+        <tr>
+            <td>OPEN</td>
+            <td><input type="text"  class="form-control" ng-model="s.open"></td>
+            <td id="pro">PROJECTIONS</td>
+
+
+
+            <td id="up">UPTREND</td>
+            <td>{{s.high-s.hl*0.5|number:2}}</td>
+            <td>{{s.high-s.hl*0.382|number:2}} </td>
+            <td>{{s.high-s.hl*0.236|number:2}}</td>
+            <td id="hundred">{{s.high}}</td>
+            <td>{{s.high+s.hl*0.236|number:2}}</td>
+            <td>{{s.high+s.hl*0.382|number:2}}</td>
+            <td>{{s.high+s.hl*0.618|number:2}}</td>
+            <td>{{s.high+s.hl*1|number:2}}</td>
+            <td>{{s.high+s.hl*1.382|number:2}}</td>
+            <td>{{s.high+s.hl*1.618|number:2}}</td>
+
+        </tr>
+
+        <tr>
+            <td>HIGH</td>
+            <td><input type="text"  class="form-control" ng-model="s.high"></td>
+            <td id="pro"></td>
+            <td id="down">DOWNTREND</td>
+            <td>{{s.high-s.hl*0.5|number:2}}</td>
+            <td>{{s.low+s.hl*0.382|number:2}}</td>
+            <td>{{s.low+s.hl*0.236|number:2}}</td>
+            <td id="hundred">{{s.low}}</td>
+            <td>{{s.low-s.hl*0.236|number:2}}</td>
+            <td>{{s.low-s.hl*0.382|number:2}}</td>
+            <td>{{s.low-s.hl*0.618|number:2}}</td>
+            <td>{{s.low-s.hl*1|number:2}}</td>
+            <td>{{s.low-s.hl*1.382|number:2}}</td>
+            <td>{{s.low-s.hl*1.618|number:2}}</td>
+        </tr>
+
+
+        <tr>
+            <td>LOW</td>
+            <td><input type="text"  class="form-control" ng-model="s.low"></td>
+            <td td id="pro"></td>
+            <td id="r5">R-5</td>
+            <td id="r4">R-4</td>
+            <td id="r3">R-3</td>
+            <td id="r2">R-2</td>
+            <td id="r1">R-1</td>
+            <td id="pp">PP</td>
+            <td id="s1">S-1</td>
+            <td id="s2">S-2</td>
+            <td id="s3">S-3</td>
+            <td id="s4">S-4</td>
+            <td id="s5">S-5</td>
+        </tr>
+
+        <tr>
+            <td>H-L</td>
+            <td><input type="text"  class="form-control" ng-model="s.hl" ></td>
+            <td id="pivot">PIVOT POINT</td>
+            <td>{{(s.high+s.low+s.close)/3+(4*s.hl)|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3+(3*s.hl)|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3+(2*s.hl)|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3+s.hl|number:2}}</td>
+            <td>{{2*(s.high+s.low+s.close)/3-s.low|number:2}}</td>
+            <td id="pp">{{(s.high+s.low+s.close)/3|number:2}}</td>
+            <td>{{2*(s.high+s.low+s.close)/3-s.high|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3-s.hl|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3-(2*s.hl)|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3-(3*s.hl)|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3-(4*s.hl)|number:2}}</td>
+        </tr>
+
+        <tr>
+            <td>CLOSE</td>
+            <td><input type="text"  class="form-control" ng-model="s.close"></td>
+            <td id="fib">FIBONACCI</td>
+            <td>{{(s.high+s.low+s.close)/3+s.hl*1.618|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3+s.hl*1.382|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3+s.hl*1|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3+s.hl*0.618|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3+s.hl*0.382|number:2}}</td>
+            <td id="pp">{{(s.high+s.low+s.close)/3|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3-0.382*s.hl|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3-0.618*s.hl|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3-s.hl|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3-1.382*s.hl|number:2}}</td>
+            <td>{{(s.high+s.low+s.close)/3-1.618*s.hl|number:2}}</td>
+        </tr>
+
+        <tr>
+            <td> <button class="btn btn-primary" ng-click="calculate()">CALCULATE</button></td>
+            <td><input type="text"  class="form-control" ng-model="s.name" ng-change="upper()" ></td>
+            <td id="cam">CAMRILLA</td>
+            <td>{{s.close+s.hl*1.1|number:2}}</td>
+            <td id="imp">{{s.close+s.hl*1.1/2|number:2}}</td>
+            <td>{{s.close+s.hl*1.1/4|number:2}}</td>
+            <td>{{s.close+s.hl*1.1/6|number:2}}</td>
+            <td>{{s.close+s.hl*1.1/12|number:2}}</td>
+            <td id="pp">{{(s.high+s.low+s.close)/3|number:2}}</td>
+            <td>{{s.close-s.hl*1.1/12|number:2}}</td>
+            <td>{{s.close-s.hl*1.1/6|number:2}}</td>
+            <td>{{s.close-s.hl*1.1/4|number:2}}</td>
+            <td id="imp">{{s.close-s.hl*1.1/2|number:2}}</td>
+            <td>{{s.close-s.hl*1.1|number:2}}</td>
+        </tr>
+
+        </tbody>
+
+
+
+
+
+    </table>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="./controllers/controller.js"></script>
+
+</body>
+</html>

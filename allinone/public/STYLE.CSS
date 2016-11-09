@@ -1,0 +1,119 @@
+table.table {
+      
+    font-family: 'Roboto Slab',"Times New Roman", Times, serif;
+    font-weight: bold;
+    table-layout:fixed; }
+table.table td {
+    text-align: center;
+    padding: 15px;
+    overflow: hidden; }
+
+div{border: 2px solid #73AD21;
+
+    margin: 10px 150px 100px 80px;
+}
+
+#hundred{
+	background-color:#E87E04!important; 
+	color: white;
+      }
+
+#pp{
+background-color:#E87E04!important; 
+	color: white;
+
+}
+#level{
+	
+	background-color:#F5D76E!important; 
+	color: white;
+}
+
+#up{
+background-color:#26A65B!important; 
+	color: white;
+
+}
+#down{
+	background-color:#CF000F!important; 
+	color: white;
+}
+#pivot{
+		background-color:#4183D7!important; 
+	color: white;
+}
+#fib{
+	background-color:#D24D57!important; 
+	color: white;
+	
+}
+#cam{
+background-color:#1E824C!important; 
+	color: white;
+
+}
+#pro{
+	background-color:#81CFE0!important; 
+	color: white;
+}
+
+
+#r5{
+	background-color:#006128!important; 
+	color: white;
+
+}
+#r4{
+	background-color:#008035!important; 
+	color: white;
+
+}
+#r3{
+	background-color:#0f9848!important; 
+	color: white;
+
+}
+
+#r2{
+	background-color:#1ebb5f!important; 
+	color: white;
+
+}
+#r1{
+	background-color:#18ce63!important; 
+	color: white;
+
+}
+
+
+#s1{
+
+background-color:#ff1e1e!important; 
+	color: white;
+}
+#s2{
+
+background-color:#f51d16!important; 
+	color: white;
+}
+#s3{
+
+background-color:#f90800!important; 
+	color: white;
+}
+#s4{
+
+background-color:#ec0700!important; 
+	color: white;
+}
+#s5{
+
+background-color:#c70700!important; 
+	color: white;
+}
+
+#imp{
+	background-color:#EF4836!important; 
+	color: white;
+
+}
